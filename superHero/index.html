@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>SuperHero</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+  <body>
+    <section class="prodecter cardp">
+      <div class="loader"></div>
+      <!-- <p class="alert"></p> -->
+    </section>
+    <section class="disp">
+      <div class="head">
+        <p> SUPER HERO WORLD...!</p>
+      </div>
+      <div class="main">
+        <div class="main-child1 main-child">
+          <input type="text" id="name">
+          <button class="button" onclick="fetchData()">FIND</button>
+        </div>
+        <div class="main-child2 main-child">
+          <p>Find your favourite SuperHero!</p>
+          <p>Try searching like hulk or captain america...</p>
+        </div>
+      </div>
+      <div class="output">
+        <div id="image"></div>
+        <div class="content">
+          <div class="content-child c-child1">
+            <div class="card cardp">
+              <div class="front cardp ">power stats</div>
+              <div class="back cardp powerstats"></div>
+            </div>
+          </div>
+          <div class="content-child c-child2">
+            <div class="card cardp">
+              <div class="front cardp ">appearance</div>
+              <div class="back cardp appearance"></div>
+            </div>
+          </div>
+          <div class="content-child c-child3">
+            <div class="card cardp">
+              <div class="front cardp ">work</div>
+              <div class="back cardp work"></div>
+            </div>
+          </div>
+          <div class="content-child c-child4 c-bottom">
+            <div class="card cardp">
+              <div class="front cardp ">biography</div>
+              <div class="back cardp biography"></div>
+            </div>
+          </div>
+          <div class="content-child c-child5 c-bottom">
+            <div class="card cardp">
+              <div class="front cardp ">connections</div>
+              <div class="back cardp connections"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  <script src="script.js"></script>
+  <script src="idList.js"></script>
+  <script src="https://kit.fontawesome.com/0eb24d6e39.js" crossorigin="anonymous"></script>
+  </body>
+
+</html>

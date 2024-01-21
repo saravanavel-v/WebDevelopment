@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
+*{
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+  font-family:"Josefin Sans" ;
+}
+.prodecter{
+  opacity: 0;
+  z-index: 1;
+  backdrop-filter: blur(10px);
+}
+.loader{
+  width:200px;
+  height:200px;
+  border:5px solid gray;
+  border-radius: 50%;
+  border-right-color: rgb(0, 162, 255);
+  animation: spin 1s ease infinite;
+}
+@keyframes spin{
+  100%{
+    transform: rotate(360deg);
+  }
+}
+.disp{
+  position: relative;
+  z-index: 10;
+}
+.head{
+  width:100%;
+  height:70px;
+  background-color:rgb(0,121,242);
+  color:#efefef;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding:0px 20px;
+  font-size: 25px;
+}
+.main{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 22px;
+}
+.main-child{
+  width: 80%;
+  height: 100px;
+  display: flex;
+  align-items: center;
+}
+.main-child1{
+  justify-content: center;
+}
+.main-child2{
+  flex-direction:column;
+  justify-content: space-evenly;
+}
+.main-child2 p{
+  text-align: center;
+}
+#name{
+  width: 230px;
+  height: 40px;
+  outline: none;
+  border: 2px solid gray;
+  padding-left: 15px;
+  font-size: 20px;
+}
+.button{
+  margin-left: 20px;
+  width: 100px;
+  height: 40px;
+  font-size: 20px;
+  color: #efefef;
+  background-color: rgb(0,121,242);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.output{
+  width: 90%;
+  height:2200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#image{
+  width:100%;
+  height:500px;
+  overflow-y: scroll;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+.content{
+  width:100%;
+  height:70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 15px;
+}
+.content-child{
+  width:100%;
+  height:300px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.2);
+}
+.c-bottom{
+  width:100%;
+}
+.img{
+  width:100%;
+  height:100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.cardp{
+  width:100%;
+  height:100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card{
+  transform-style: preserve-3d;
+  transition: all 0.5s ease;
+}
+.content-child:hover .card{
+  transform: rotateY(180deg);
+}
+.front{
+  backface-visibility: hidden;
+  background-color: rgb(0,121,242);
+  color:#efefef;
+  font-size: 25px;
+}
+.back{
+  backface-visibility: hidden;
+  background-color: rgb(0,121,242);
+  color:#efefef;
+  transform: rotateY(180deg);
+  flex-direction: column;
+  overflow: scroll;
+  align-items: flex-start;
+  justify-content: start;
+  padding: 20px 0 20px 20px;
+}
+::-webkit-scrollbar{
+  display: none;
+}
+.p{
+  font-size: 23px;
+}
+
+@media  screen and (min-width:750px) {
+  #image{
+    width:70%;
+  }
+  .output{
+    height:1500px;
+  }
+  .content{
+    width:90%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .content-child,.c-bottom{
+    width:48%;
+  }
+  .main-child2 p,.p{
+    font-size: 30px;
+  }
+  .front{
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width:1100px){
+  .output{
+    height:650px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  #image{
+    width:33%;
+    height:100%;
+  }
+  .content{
+    width:63%;
+    height:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .front{
+    font-size: 30px;
+  }
+  .content-child{
+    width:30%;
+  }
+  .c-bottom{
+    width:45%;
+  }
+  .main-child2 p,.p{
+    font-size: 25px;
+  }
+}
