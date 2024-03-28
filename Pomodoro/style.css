@@ -1,0 +1,173 @@
+html {
+  height: 100%;
+  width: 100%;
+  color: #efefef;
+}
+*{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+}
+.bg{
+  background-color: rgb(56,133,139);
+}
+.bg1{
+  background-color:black;
+}
+.ac{
+  height: 100vh;
+  display: flex;
+  margin:auto;
+  justify-content:space-between;
+  align-items: center;
+  flex-direction:column;
+}
+p{
+  font-size: 25px;
+  font-family:"Josefin Sans";
+}
+.tb{
+  width: 90%;
+  height: 50px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.round{
+  border: 1px solid #fcfcfc;
+  border-radius: 100%;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction:column;
+  z-index:10;
+}
+.round-1{
+  width: 230px;
+  height: 230px;
+  position: relative;
+}
+.round-2{
+  width: 195px;
+  height: 195px;
+  border: 5px solid #faf9f9;
+}
+.round-3{
+  width: 160px;
+  height: 160px;
+}
+.round-3 h1{
+  font-size:30px;
+  font-family:"Josefin Sans";
+  margin-top: 10px;
+}
+.bottom{
+  width: 230px;
+  height: 200px;
+}
+.setting{
+  width:100%;
+  justify-content:space-around;
+  z-index:17;
+  position:absolute;
+  top:0;
+  left:0;
+  display: none;
+}
+.close{
+  width:90%;
+  height: 50px;
+  display: flex;
+  justify-content:flex-end;
+  align-items:flex-start;
+}
+.inp{
+  
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  align-items: center;
+  
+}
+#bar{
+  display:none;
+}
+#bar:checked ~ .setting{
+  display:flex;
+}
+#exit{
+  display:none;
+}
+.info >p{
+  width:100%;
+  max-width: 1600px;
+  position: absolute;
+  left:0;
+  right: 0;
+  margin:auto;
+  padding:40px 20px;
+  text-align:center;
+  background-color:black;
+  transition:.5s;
+  opacity:0;
+  transform: translateY(-180%);
+}
+.info > input[type=checkbox]{
+  display:none;
+}
+.info > input[type=checkbox]:checked ~ p{
+  opacity: 1;
+  z-index: 15;
+}
+#mode:checked html{
+  background-color:black;
+}
+#longTimeBreak{
+    border-radius: 4px;
+    background-color: rgb(239, 239, 239);
+    padding: 10px;
+    border: none;
+    color: rgb(85, 85, 85);
+    width: 70px;
+    font-size: 25px;
+}
+#longTimeBreak:focus{
+  outline: none;
+}
+input[type=range]{
+  border: none;
+  accent-color: coral;
+}
+input[type=range]:focus{
+  outline: none;
+}
+input[type=checkbox]{
+  cursor: pointer;
+}
+@media screen and (min-width:600px){
+  .info >p{
+    transform:translateY(-230%);
+  }
+  p{
+    font-size: 35px;
+  }
+  .round-1{
+  width: 290px;
+  height: 290px;
+  position: relative;
+  }
+  .round-2{
+    width: 255px;
+    height: 255px;
+    border: 5px solid #faf9f9;
+  }
+  .round-3{
+    width: 210px;
+    height: 210px;
+  }
+  .round-3 >h1{
+    font-size: 45px;
+  }
+}

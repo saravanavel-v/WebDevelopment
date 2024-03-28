@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html class="bg">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Arvo&family=Baloo+Paaji+2:wght@700&family=Courgette&family=Crete+Round&family=Dancing+Script&family=Josefin+Sans&family=Kaushan+Script&family=Libre+Baskerville&family=Lilita+One&family=Lugrasimo&family=Pacifico&family=Permanent+Marker&family=Poppins:wght@300&family=Righteous&family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <section class="page1">
+    <section class="clock ac">
+      <div class="top tb">
+        <p>Pomodoro Timer</p>
+        <input type="checkbox" id="bar">
+        <section class="setting ac bg" id="setting">
+          <input type="checkbox" id="exit">
+          <div class="close">
+            <label for="bar"><i class="fa fa-times" style="font-size:30px;"></i></label>
+          </div>
+          <div class="time-input inp">
+            <label for="work-range" ><p>Work</p></label>
+            <p id="work-time-count">25</p>
+            <input type="range" id="work-range" value="25" min="5" max="60">
+            <label for="short-range" ><p>Short</p></label>
+            <p id="Short-time-count">5</p>
+            <input type="range" id="short-range" value="5" min="5" max="60">
+            <label for="long-range" ><p>Long</p></label>
+            <p id="Long-time-count">20</p>
+            <input type="range" id="long-range" value="20" min="5" max="60">
+          </div>
+          <div class="userinp inp">
+            <label for="longTimeBreak"><p>Long Break interval</p></label>
+            <input type="number" id="longTimeBreak" value="4">
+            <label for="sound"><p>Sound</p></label>
+            <input type="checkbox" id="sound" checked>
+            <label for="mode"><p>Dark Mode</p></label>
+            <input type="checkbox" id="mode">
+          </div>
+        </section>
+        <label for="bar"><i class="fa fa-bars" style="font-size:30px;"></i></label>
+      </div>
+      <div class="round-1 round">
+        <div class="round-2 round">
+          <div class="round-3 round">
+            <p id="work">Work</p>
+            <h1 id="time">25:00</h1>
+          </div>
+        </div>
+      </div>
+      <div class="bottom tb">
+        <i class="fa fa-rotate-left" style="font-size:36px;" id="restart"></i>
+        <i class="fa fa-play-circle-o" id="play" style="font-size:50px;"></i>
+        <label for="info"><i class="fa fa-info-circle" style="font-size:36px;"></i></label>
+      </div>
+    </section>
+  </section>
+   <div class="info">
+        <input type="checkbox" id="info">
+        <p>The Pomodoro Technique is a time management method based on 25-minute stretches of focused work broken by five-minute breaks</p>
+    </div>
+  
+  <script src="script.js"></script>
+
+</body>
+
+</html>
