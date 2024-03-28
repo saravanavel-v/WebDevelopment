@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Mood Tracker</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <section class=" page-4">
+    <p class="error"></p>
+    <div class="main">
+        <section class="page-1 disp">
+            <h1>Mood Tracker</h1>
+            <div class="page1-loginbox disp">
+              <button class="login-button button">Login</button>
+              <p>or login with</p>
+              <div class="login-opt">
+                <button class="login-buttons g-b button">google</button>
+                <button class="login-buttons f-b button">FaceBook</button>
+              </div>
+            </div>
+            <p>new user ? <span class="new-ac">CREATE NEW</span></p>
+      </section>
+    
+      <section class="page-2 disp">
+        <p id="alertbox"></p>
+        <div class="page2-innerdiv disp">
+          <lable for="uid">Enter Username</lable>
+          <input type="text" placeholder="username" id="uid">
+        </div>
+        <div class="page2-innerdiv disp">
+            <label for="eid">Enter Email</label>
+            <input type="email" placeholder="email" id="eid">
+        </div>
+        <div class="page2-innerdiv disp">
+          <lable for="pass1">Enter Password</lable>
+          <input type="password" placeholder="password" id="pass1">
+        </div>
+        <div class="page2-innerdiv disp">
+          <lable for="pass2">Re-Enter Your Password</lable>
+          <input type="password" placeholder="re-enter password" id="pass2">
+        </div>
+        <button class="button continue">continue</button>
+      </section>
+    
+      <section class="page view-page">
+        <div class="nav">
+          <button class="h-icon icon fa-solid fa-house-user">
+            <i class="" ></i>
+          </button>
+          <button class="c-icon icon fa-solid fa-chart-simple">
+            <i class="" style="font-size:25px;"></i>
+          </button>
+          <button class="p-icon icon fa-solid fa-plus">
+             <i class="" style="font-size: 25px;"></i>
+          </button>
+          <button class="cal-icon icon fa-solid fa-calendar-days">
+            <i class="" style="font-size: 25px;"></i>
+          </button>
+          <button class="u-icon icon fa-solid fa-circle-user">
+             <i class="" style="font-size: 25px;"></i>
+          </button>
+        </div>
+        <section class="whole-page">
+          <section class="home page pagem">
+            <div class="profile">
+              <div class="profile-img">
+                <i class="fa-solid fa-circle-user" style="font-size: 80px;"></i>
+              </div>
+              <div class="profile-con">
+                <h1>Hi, <span id="name" >  User</span></h1>
+                <p>How are you feeling today?</p>
+              </div>
+            </div>
+            <div class="moods-div">
+              <h2>Moods</h2>
+              <div class="moods-icon">
+                <p>&#128516;</p>
+                <p>&#128542;</p>
+                <p>&#128528;</p>
+                <p>&#128544;</p>
+              </div>
+            </div>
+            <div class="before-moods"></div>
+          </section>
+          <section class="statistics page pagem">
+            <p>Statistics</p>
+            <div class="sta-table">
+              <canvas id="myChart1" style="width:340px; height:200px;"></canvas>
+            </div>
+            <div class="mood-stability">
+              <h1>Mood stability</h1>
+              <p>The Higher the Number, the more stable of a person you are</p>
+              <div class="sta-child3">
+                <div class="sta-child3-child sta-inner-child1">87/100</div>
+                <div class="sta-child3-child sta-inner-child2">
+                  <p>&#128528;</p>
+                  <p>you feel normal on average</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="addtoday page pagem">
+            <p>Journal title</p>
+            <input type="text" id="journal-title" placeholder="enter a title here">
+            <div class="moods-div">
+              <h2>Select Mood</h2>
+              <div class="moods-icon">
+                <label for="happy"><p class="happy mood">&#128516;</p></label>
+                <input type="radio" id="happy" name="mood">
+                <label for="sad"><p class="sad mood">&#128542;</p></label>
+                <input type="radio" id="sad" name="mood">
+                <label for="normal"><p class="normal mood">&#128528;</p></label>
+                <input type="radio" id="normal" name="mood">
+                <label for="angry"><p class="angry mood">&#128544;</p></label>
+                <input type="radio" id="angry" name="mood">
+              </div>
+            </div>
+            <p>What did you do today</p>
+            <div class="d-works">
+              <button class="button work" id="Sleep">#Sleep</button>
+              <button class="button work" id="Rest">#Rest</button>
+              <button class="button work" id="Walking">#Walking</button>
+              <button class="button work" id="Work">#Work</button>
+              <button class="button work" id="Movie">#Movie</button>
+            </div>
+            <textarea id="description" placeholder="description "></textarea>
+            <button class="accept button">Done</button>
+          </section>
+          <section class="cal page pagem">
+            <div class="cal-head">
+              <i class="fa-solid fa-arrow-left" onclick="prev()"></i>
+              <p id="month-year"></p>
+              <i class="fa-solid fa-arrow-right" onclick="nxt()"></i>
+            </div>
+            <div class="cal-main cal-box">
+              <div class="cal-days">
+                <p>Sun</p>
+                <p>Mon</p>
+                <p>Tue</p>
+                <p>Wed</p>
+                <p>Thu</p>
+                <p>Fri</p>
+                <p>Sat</p>
+                
+              </div>
+              <div class="cal-dates"></div>
+            </div>
+            <div class="mood-meter cal-box">
+              <h1>Mood meter</h1>
+              <p>This is your mood meter for the month</p>
+              <div style="height:150px;">
+                <canvas id="myChart2" style="width:140px; height:140px; transform:translateY(-35px);"></canvas>
+                <p id="month-count">30</p>
+              </div>
+              <div class="mood-count">
+                <div class="count-child ch1" style="background-color: rgb(255,99,132);"><p>&#128516;</p><span class="mcount happycount"></span></div>
+                <div class="count-child ch2" style="background-color: rgb(54,162,235);"><p>&#128542;</p><span class="mcount sadcount"></span></div>
+                <div class="count-child ch3" style="background-color: rgb(255,205,86);"><p>&#128528;</p><span class="mcount normalcount"></span></div>
+                <div class="count-child ch4" style="background-color: rgb(255,56,86);"><p>&#128544;</p><span class="mcount angrycount"></span></div>
+              </div>
+            </div>
+          </section>
+          <section class="user page pagem">
+            <p>Account Details</p>
+            <div class="user-name2 input-save" >
+              <span>
+                <i class="fa-solid fa-circle-user" style="font-size: 25px;"></i>
+              </span>
+              <input type="text" placeholder="User Name" id="username">
+            </div>
+            <div class="user-email2 input-save">
+              <span>
+                <i class="fa-solid fa-envelope" style="font-size: 25px;"></i>
+              </span>
+              <input type="email" placeholder="Email-ID" id="email">
+            </div>
+            <div class="user-pass2 input-save">
+              <span>
+                <i class="fa-solid fa-lock" style="font-size: 25px;"></i>
+              </span>
+              <input type="password" placeholder="Password" id="password">
+              <!-- <span>
+                <i class="fa-solid fa-eye-slash" style="font-size: 25px;"></i>
+              </span> -->
+            </div>
+            <div class="user-pass2 input-save">
+              <span>
+                <i class="fa-solid fa-lock" style="font-size: 25px;"></i>
+              </span>
+              <input type="password" placeholder="Re-Enter Password" id="password2">
+              <!-- <span>
+                <i class="fa-solid fa-eye-slash" style="font-size: 25px;"></i>
+              </span> -->
+            </div>
+            <div class="sl-buttons">
+                <button class="button save">Save</button>
+                <button class="button logout">Logout</button>
+            </div>
+              
+          </section>
+        </section>
+        
+      </section>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="navpage.js"></script>    
+  <script src="chart.js"></script>
+  <script src="const.js"></script>
+  <script src="data.js"></script>
+  <script src="cal.js"></script>
+  <script src="data2.js"></script>
+  
+  <script src="https://kit.fontawesome.com/0eb24d6e39.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
