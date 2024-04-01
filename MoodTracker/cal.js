@@ -138,7 +138,7 @@ function addMoodBoxs(obj){
       <p class="show-emoji">#emoji#</p>
     </div>
     <div class="mood-boxs-child">
-      <p class="title">#title#</p>    02 october,12:03 am
+      <p class="title">#title#</p>
       <p class="time">#time#</p>
       <div class="work-list" >
         #worklist-p#
@@ -154,13 +154,8 @@ function addMoodBoxs(obj){
     workListTemp += p;
   })
     
-  let time  = new Date();
-  let hours = time.getHours().toString().padStart(2, '0');
-  let minutes = time.getMinutes().toString().padStart(2, '0');
-  let seconds = time.getSeconds().toString().padStart(2, '0');
-  let currentTime = `${hours}:${minutes}:${seconds}`;
-  let timeInStr = `${time.getDate()} ${time.toLocaleString('en-US', { month: 'long' })}, ${currentTime}`
-  let temp = moodBoxDiv.replace("#emoji#",moodEmoji[obj.emoji]).replace("#title#",obj.title).replace("#description#",obj.description).replace("#time#",timeInStr).replace("#worklist-p#",workListTemp)
+
+  let temp = moodBoxDiv.replace("#emoji#",moodEmoji[obj.emoji]).replace("#title#",obj.title).replace("#description#",obj.description).replace("#time#",obj.time).replace("#worklist-p#",workListTemp)
   __(".before-moods").innerHTML += temp;
 
 
