@@ -103,9 +103,16 @@ __(".accept").addEventListener('click',()=>{
 
 
 async function setDataToObj(t,e,wl,d,dateObj){
+    let time  = new Date();
+    let hours = time.getHours().toString().padStart(2, '0');
+    let minutes = time.getMinutes().toString().padStart(2, '0');
+    let seconds = time.getSeconds().toString().padStart(2, '0');
+    let currentTime = `${hours}:${minutes}:${seconds}`;
+    let timeInStr = `${time.getDate()} ${time.toLocaleString('en-US', { month: 'long' })}, ${currentTime}`
     let data1 = {};
     data1.title = t;
     data1.emoji = e;
+    data1.time = timeInStr;
     data1.works = wl;
     data1.description = d;
     console.log(dateObj,data1);
