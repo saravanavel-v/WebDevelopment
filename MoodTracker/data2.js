@@ -80,11 +80,17 @@ __(".accept").addEventListener('click',()=>{
     __(".cal-dates").addEventListener('click',ev=>{
         if(ev.target.classList.contains("emoji")){
             let e = ev;
+            selectDate = ev.target.nextElementSibling.textContent;
             if(selectedYear == today.year){
-                if(selectedMonth <= today.month){
+                if(selectedMonth == today.month  && selectDate <= today.date){
                     selectDate = ev.target.nextElementSibling.textContent;
                     // selectMonth = selectedMonth;
                     // selectYear = selectedYear;
+                    changePage(__(".p-icon"));
+                    console.log(e.textContent,selectedMonth,selectedYear,ev.target.nextElementSibling.textContent)  
+                }
+                else if(selectedMonth < today.month){
+                    selectDate = ev.target.nextElementSibling.textContent;
                     changePage(__(".p-icon"));
                     console.log(e.textContent,selectedMonth,selectedYear,ev.target.nextElementSibling.textContent)  
                 }
